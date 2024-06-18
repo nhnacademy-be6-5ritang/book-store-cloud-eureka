@@ -47,7 +47,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             echo "Stopping existing application..."
-            pid=$(lsof -t -i:${{ secrets.BACK_PORT }}) && kill -9 $pid || echo "No application running on port ${{ secrets.BACK_PORT }}"
+            pid=$(lsof -t -i:${{ secrets.EUREKA_PORT }}) && kill -9 $pid || echo "No application running on port ${{ secrets.EUREKA_PORT }}"
 
       #앱 포트로 배포 한 jar 파일 실행
       - name: execute shell script
@@ -60,6 +60,6 @@ jobs:
           script_stop: true
           script: |
             echo "Starting new application..."
-            nohup java -jar ~/target/BOOK-STORE-FRONT.jar --server.port=${{ secrets.BACK_PORT }} > app.log 2>&1 &
+            nohup java -jar ~/target/BOOK-STORE-FRONT.jar --server.port=${{ secrets.EUREKA_PORT }} > app.log 2>&1 &
             echo "New application started. Check app.log for details."
 
