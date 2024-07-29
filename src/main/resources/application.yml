@@ -1,0 +1,27 @@
+server:
+  port: 8761
+  shutdown: graceful
+
+spring:
+  application:
+    name: book-store-eureka
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+  profiles:
+    active: dev
+  security:
+    user:
+      name: admin
+      password: 1234
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+logging:
+  file:
+    path: ./logs
+
+# \uC720\uB808\uCE74 \uC774\uC911\uD654\uD574\uC11C \uB9C8\uC774\uD06C\uB85C\uC11C\uBE44\uC2A4 \uC11C\uBC84\uBB38\uC81C\uC0DD\uAE38\uACBD\uC6B0 \uBC29\uC9C0\uD568
+# http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/eureka/.http://${spring.security.user.name}:${spring.security.user.password}@localhost:8762/eureka/
