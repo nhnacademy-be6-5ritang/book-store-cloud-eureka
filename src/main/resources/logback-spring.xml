@@ -90,15 +90,6 @@
         </filter>
     </appender>
 
-    <!-- LogNCrashAppender 추가 -->
-    <springProfile name="prod">
-        <appender name="LOG_N_CRASH" class="com.nhnacademy.bookstoreeureka.config.LogNCrashAppender"/>
-
-        <root level="warn">
-            <appender-ref ref="LOG_N_CRASH"/>
-        </root>
-    </springProfile>
-
     <!--  root 로거 설정  -->
     <root level="warn">
         <appender-ref ref="CONSOLE"/>
