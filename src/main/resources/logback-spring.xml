@@ -94,13 +94,13 @@
     <springProfile name="prod">
         <appender name="LOG_N_CRASH" class="com.nhnacademy.bookstoreeureka.config.LogNCrashAppender"/>
 
-        <root level="info">
+        <root level="warn">
             <appender-ref ref="LOG_N_CRASH"/>
         </root>
     </springProfile>
 
     <!--  root 로거 설정  -->
-    <root level="info">
+    <root level="warn">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="ALL_FILE"/>
         <appender-ref ref="INFO_FILE"/>
