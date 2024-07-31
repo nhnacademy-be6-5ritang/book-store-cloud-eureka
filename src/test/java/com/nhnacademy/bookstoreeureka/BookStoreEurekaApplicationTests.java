@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BookStoreEurekaApplicationTests {
 
     @Test
-    public void mainMethodTest() {
+    void mainMethodTest() {
         assertDoesNotThrow(() -> {
             BookStoreEurekaApplication.main(new String[]{});
         });
